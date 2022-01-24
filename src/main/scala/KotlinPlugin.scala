@@ -22,9 +22,9 @@ object KotlinPlugin extends AutoPlugin {
         "org.jetbrains.kotlin" % "kotlin-scripting-compiler-embeddable" % kotlinVersion.value
       ),
       KotlinInternal / managedClasspath := Classpaths.managedJars(KotlinInternal, classpathTypes.value, update.value),
-      kotlinVersion := "1.6.10",
-      kotlincOptions := Nil,
-      kotlincPluginOptions := Nil,
+      kotlinVersion                     := "1.6.10",
+      kotlincOptions                    := Nil,
+      kotlincPluginOptions              := Nil,
       watchSources ++= {
         import language.postfixOps
         val kotlinSources = "*.kt" || "*.kts"
@@ -39,7 +39,7 @@ object KotlinPlugin extends AutoPlugin {
   // public to allow kotlin compile in other configs beyond Compile and Test
   val kotlinCompileSettings = List(
     unmanagedSourceDirectories += kotlinSource.value,
-    kotlincOptions := kotlincOptions.value,
+    kotlincOptions       := kotlincOptions.value,
     kotlincPluginOptions := kotlincPluginOptions.value,
     kotlinCompile := Def
       .task {
@@ -55,7 +55,7 @@ object KotlinPlugin extends AutoPlugin {
       }
       .dependsOn(Compile / compile / compileInputs)
       .value,
-    compile := (compile dependsOn kotlinCompile).value,
+    compile      := (compile dependsOn kotlinCompile).value,
     kotlinSource := sourceDirectory.value / "kotlin"
   )
 }
