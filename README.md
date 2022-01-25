@@ -5,13 +5,13 @@
 
 Build kotlin code using sbt
 
-Current version 3.0.1
+Current version 3.0.3
 
 ## Usage
 
 * for sbt 0.13.6+, add following in project/plugins.sbt:
   * resolvers += "jitpack" at "https://jitpack.io"
-  * libraryDependencies += "com.github.tmtsoftware" % "kotlin-plugin" % "3.0.1"
+  * libraryDependencies += "com.github.tmtsoftware" % "kotlin-plugin" % "3.0.3"
 * Kotlin code will build automatically from `src/XXX/kotlin`
 * If necessary, add `kotlinLib("stdlib")`, it is not included by default.
   * Loading standard kotlin libraries and plugins: use `kotlinLib(NAME)` as
