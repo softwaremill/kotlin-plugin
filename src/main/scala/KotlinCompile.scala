@@ -154,11 +154,12 @@ case class KotlinStub(s: TaskStreams, kref: KotlinReflection) {
     // deeply in flux since 1.1.x
     val parser              = kref.cl.loadClass("org.jetbrains.kotlin.cli.common.arguments.ParseCommandLineArgumentsKt")
     val commonToolArguments = cl.loadClass("org.jetbrains.kotlin.cli.common.arguments.CommonToolArguments")
+    val booleanArg = cl.loadClass("kotlin.Boolean")
     val parserMethod =
       parser.getMethod("parseCommandLineArguments", classOf[java.util.List[java.lang.String]], commonToolArguments,
-        java.lang.Boolean.TYPE)
+        booleanArg)
     import collection.JavaConverters._
-    parserMethod.invoke(null, options.asJava, args, java.lang.Boolean.FALSE.asInstanceOf[java.lang.Object])
+    parserMethod.invoke(null, options.asJava, args, java.lang.Boolean.FALSE)
   }
 
   def compilerArgs = {
