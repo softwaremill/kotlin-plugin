@@ -157,7 +157,7 @@ case class KotlinStub(s: TaskStreams, kref: KotlinReflection) {
     val parserMethod =
       parser.getMethod("parseCommandLineArguments", classOf[java.util.List[java.lang.String]], commonToolArguments, classOf[Boolean])
     import collection.JavaConverters._
-    parserMethod.invoke(null, options.asJava, args, java.lang.Boolean.FALSE)
+    parserMethod.invoke(null, options.asJava, args, java.lang.Boolean.FALSE.asInstanceOf[java.lang.Object])
   }
 
   def compilerArgs = {
