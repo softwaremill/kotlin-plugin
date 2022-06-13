@@ -4,7 +4,7 @@ name := "kotlin-plugin"
 scalaVersion := "2.12.15"
 organization := "com.github.tmtsoftware"
 
-version := "3.0.4-test"
+version := "3.0.4-test2"
 
 lazy val LocalMavenResolverForSbtPlugins = {
   // remove scala and sbt versions from the path, as it does not work with jitpack
