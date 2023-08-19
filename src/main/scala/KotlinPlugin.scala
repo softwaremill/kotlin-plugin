@@ -1,9 +1,9 @@
 package kotlin
 
-import kotlin.Keys._
-import sbt.Keys._
+import Keys.*
+import sbt.{Keys as _, *}
+import sbt.Keys.*
 import sbt.plugins.JvmPlugin
-import sbt._
 
 /**
  * @author pfnguyen
@@ -23,7 +23,7 @@ object KotlinPlugin extends AutoPlugin {
       ),
       KotlinInternal / managedClasspath := Classpaths.managedJars(KotlinInternal, classpathTypes.value, update.value),
 //      kotlinVersion                     := "1.6.10",
-      kotlinVersion                     := "1.7.20",
+      kotlinVersion                     := "1.9.0",
       kotlincOptions                    := Nil,
       kotlincPluginOptions              := Nil,
       watchSources ++= {
