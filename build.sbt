@@ -1,7 +1,7 @@
 import sbt.io.Path.userHome
 
-name := "kotlin-plugin"
-scalaVersion := "2.12.15"
+name         := "kotlin-plugin"
+scalaVersion := "2.12.18"
 organization := "com.github.tmtsoftware"
 
 version := "3.0.3"
